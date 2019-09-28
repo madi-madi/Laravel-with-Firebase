@@ -19,43 +19,43 @@ class FirebaseController extends Controller
     {
         //dd(__DIR__);
         $serviceAccount = ServiceAccount::fromJsonFile(__DIR__.'/laravel6-94e18-firebase-adminsdk-op5mw-3ed8810bee.json');
-   //      $firebase = (new Factory)
-   //      ->withServiceAccount($serviceAccount)
-   //      ->withDatabaseUri('https://laravel6-94e18.firebaseio.com/')
-   //      ->create();
+        $firebase = (new Factory)
+        ->withServiceAccount($serviceAccount)
+        ->withDatabaseUri('https://laravel6-94e18.firebaseio.com/')
+        ->create();
 
-   //      $database = $firebase->getDatabase();
+        $database = $firebase->getDatabase();
 
-   //      $newPost = $database
-   //      ->getReference('blog/posts')
-   //      ->push([
-   //      'title' => 'Laravel FireBase Forsan Technology ........ :) ' ,
-   //      'category' => 'Laravel'
-   //      ]);
-   //      echo '<pre>';
-   //      print_r($newPost->getvalue());
-   // // }
-
-        $title = 'My Notification Title';
-        $body = 'My Notification Body';
-        $imageUrl = 'http://lorempixel.com/400/200/';
-
-        $notification = Notification::fromArray([
-        'title' => $title,
-        'body' => $body,
-        'image' => $imageUrl,
+        $newPost = $database
+        ->getReference('blog/posts')
+        ->push([
+        'title' => 'Laravel FireBase Forsan Technology ........ :) ' ,
+        'category' => 'Laravel'
         ]);
+        echo '<pre>';
+        print_r($newPost->getvalue());
+   // }
 
-        $notification = Notification::create($title, $body);
+ //        $title = 'My Notification Title';
+ //        $body = 'My Notification Body';
+ //        $imageUrl = 'http://lorempixel.com/400/200/';
 
-        $notification = Notification::create()
-        ->withTitle($title)
-        ->withBody($body)
-        ->withImageUrl($imageUrl);
+ //        $notification = Notification::fromArray([
+ //        'title' => $title,
+ //        'body' => $body,
+ //        'image' => $imageUrl,
+ //        ]);
 
-        $message = $message->withNotification($notification);
+ //        $notification = Notification::create($title, $body);
 
- print_r($message);
+ //        $notification = Notification::create()
+ //        ->withTitle($title)
+ //        ->withBody($body)
+ //        ->withImageUrl($imageUrl);
+
+ //        $message = $message->withNotification($notification);
+
+ // print_r($message);
     }
 
     /**

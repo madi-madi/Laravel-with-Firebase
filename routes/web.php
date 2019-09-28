@@ -18,6 +18,7 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('firebase','FirebaseController@index');
+Route::get('firebase2','FirebaseController2@index');
 
 //Route::group(['middleware'=>'session'], function(){
 	Route::get('/', function () {
@@ -27,3 +28,6 @@ Route::get('firebase','FirebaseController@index');
    // Route::get('your-route', 'YourController@yourAction');
 
 });
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
