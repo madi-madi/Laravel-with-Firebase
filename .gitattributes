@@ -3,3 +3,12 @@
 *.scss linguist-vendored
 *.js linguist-vendored
 CHANGELOG.md export-ignore
+# Keep vendored and generated files out of the language statistics
+public/** linguist-vendored
+vendor/** linguist-vendored
+node_modules/** linguist-vendored
+*.html linguist-vendored
+resources/views/** linguist-language=Blade
+*.blade.php linguist-language=Blade
+dist/** linguist-generated
+*.lock linguist-generated
